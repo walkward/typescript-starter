@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "dist",
+    "allowJs": true,
+    "lib": [
+      "es2015.promise",
+      "es2017",
+      "dom"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "internals/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
