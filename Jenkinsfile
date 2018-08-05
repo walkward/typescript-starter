@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        dir ('usr/src/app') {
+        dir ('/usr/src/app') {
           sh('pwd')
         }
         // sh './internals/shell/test.sh'
