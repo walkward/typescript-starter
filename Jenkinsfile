@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'echo "$(whoami)"'
+        sh 'chmod -R +x node_modules'
         sh './internals/shell/test.sh'
       }
     }
