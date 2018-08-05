@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'docker --version'
+        sh 'echo "env.PATH"'
         // sh './internals/shell/test.sh'
       }
     }
