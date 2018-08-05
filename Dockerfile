@@ -15,5 +15,7 @@ COPY tsconfig.json ./tsconfig.json
 # Compile typescript
 RUN npm run build:tsc
 
+RUN ls
+
 EXPOSE 3000
 CMD [ "npm", "start" ]
