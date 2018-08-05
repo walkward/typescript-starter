@@ -2,6 +2,6 @@
 
 # Run tests...
 set -x
-echo "$(whoami)"
+whoami
 cd /usr/src/app
 npm test
