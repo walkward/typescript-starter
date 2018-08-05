@@ -13,7 +13,7 @@ pipeline {
     stage('Test') {
       steps {
         dir ('/usr/src/app') {
-          sh 'npm test'
+          sh('ls')
         }
         // sh './internals/shell/test.sh'
       }
