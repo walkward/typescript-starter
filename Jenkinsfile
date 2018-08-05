@@ -1,11 +1,6 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-  agent {
-    docker {
-      image 'walkward/typescript-starter:latest'
-      args '-p 3000:3000 --restart always -d'
-    }
-  }
+  agent { dockerfile true }
   environment {
     CI = 'true'
   }
@@ -17,7 +12,8 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh './internals/shell/test.sh'
+        sh 'node --version'
+        // sh './internals/shell/test.sh'
       }
     }
   }
