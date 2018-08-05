@@ -12,7 +12,8 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh './internals/shell/test.sh'
+        sh 'docker --version'
+        // sh './internals/shell/test.sh'
       }
     }
   }

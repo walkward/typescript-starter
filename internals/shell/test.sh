@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 # Run tests...
 set -x
