@@ -16,8 +16,7 @@ COPY tsconfig.json ./tsconfig.json
 RUN npm run build:tsc
 
 # Setting permissions for node_modules & modules .cache
-USER jenkins
-RUN chown -R jenkins:jenkins ./node_modules
+RUN chown -R "$(whoami)" node_modules
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
