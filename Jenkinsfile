@@ -12,6 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
+        sh 'chown -R $(npm root -g) $(npm root) ~/.npm'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
