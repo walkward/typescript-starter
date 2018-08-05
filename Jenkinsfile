@@ -12,8 +12,9 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        dir '/usr/src/app'
-        sh 'ls'
+        dir ('/usr/src/app') {
+          sh 'ls'
+        }
         // sh './internals/shell/test.sh'
       }
     }
