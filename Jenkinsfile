@@ -12,7 +12,6 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'sudo chmod -R +x /usr/src/app/node_modules'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
