@@ -16,5 +16,10 @@ COPY internals/shell/test.sh ./internals/shell/test.sh
 # Compile typescript
 RUN npm run build:tsc
 
+# Create and give permissions to jenkins user
+RUN adduser -S jenkins
+RUN chown -R jenkins: .
+USER jenkins
+
 EXPOSE 3000
 CMD [ "npm", "start" ]
