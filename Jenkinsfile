@@ -12,8 +12,8 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'chmod -R +x node_modules'
-        sh './internals/shell/test.sh'
+        sh 'chmod -R +x /usr/src/app/node_modules'
+        sh '/usr/src/app/internals/shell/test.sh'
       }
     }
   }
