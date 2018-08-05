@@ -11,6 +11,7 @@ RUN npm install --only=production
 COPY src ./src
 COPY .env ./.env
 COPY tsconfig.json ./tsconfig.json
+COPY internals/shell/test.sh ./internals/shell/test.sh
 
 # Compile typescript
 RUN npm run build:tsc
