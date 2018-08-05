@@ -8,8 +8,12 @@ COPY package*.json ./
 RUN npm install --only=production
 
 # Bundle app source
-COPY ./dist ./dist
-COPY ./.env ./.env
+COPY src ./src
+COPY .env ./.env
+COPY tsconfig.json ./tsconfig.json
+
+# Compile typescript
+RUN npm run build:tsc
 
 EXPOSE 3000
 CMD [ "npm", "start" ]

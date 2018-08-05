@@ -19,8 +19,8 @@
     "start:dev": "NODE_ENV=development nodemon",
     "start:docker": "sh ./internals/shell/start.sh",
     "build": "sh ./internals/shell/build.sh",
-    "build:tsc": "tsc",
-    "build:docker": "docker build --no-cache -t ${npm_package_config_user}/${npm_package_name} .",
+    "build:tsc": "./node_modules/.bin/tsc",
+    "build:docker": "docker build -t ${npm_package_config_user}/${npm_package_name} .",
     "docker:logs": "docker logs ${npm_package_name} -f --tail=\"20\"",
     "test": "NODE_ENV=test ava-ts",
     "test:watch": "NODE_ENV=test ava-ts --watch",
@@ -31,16 +31,16 @@
   "author": "Walker Ward",
   "license": "MIT",
   "devDependencies": {
-    "ava-ts": "0.25.0",
-    "ava": "1.0.0-beta.6",
     "nodemon": "1.18.3",
     "plop": "2.0.0",
     "tslint": "5.11.0",
     "tslint-consistent-codestyle": "1.13.3",
-    "tslint-eslint-rules": "5.3.1",
-    "typescript": "2.9.1"
+    "tslint-eslint-rules": "5.3.1"
   },
   "dependencies": {
+    "ava-ts": "0.25.0",
+    "ava": "1.0.0-beta.6",
+    "typescript": "2.9.1",
     "@types/body-parser": "1.17.0",
     "@types/compression": "0.0.36",
     "@types/dotenv": "4.0.3",
