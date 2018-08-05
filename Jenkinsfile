@@ -3,7 +3,7 @@ pipeline {
   agent { dockerfile true }
   environment {
     CI = 'true'
-    PATH = "${env.PATH}"
+    PWD = "${env.PWD}"
   }
   stages {
     // stage('Build') {
@@ -13,7 +13,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'ls /usr/local/bin'
+        sh 'echo $PWD'
         // sh './internals/shell/test.sh'
       }
     }
