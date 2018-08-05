@@ -13,7 +13,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'echo $PATH'
+        sh 'ls /usr/local/bin'
         // sh './internals/shell/test.sh'
       }
     }
