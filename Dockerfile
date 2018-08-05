@@ -16,7 +16,7 @@ COPY tsconfig.json ./tsconfig.json
 RUN npm run build:tsc
 
 # Setting permissions for node_modules & modules .cache
-RUN chmod +x node_modules
+RUN chmod +x ./node_modules
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
