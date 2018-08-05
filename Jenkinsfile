@@ -1,10 +1,6 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-  agent {
-    dockerfile {
-      customWorkspace '/usr/src/app'
-    }
-  }
+  agent { dockerfile true }
   environment {
     CI = 'true'
   }
@@ -16,8 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'pwd'
-        // sh './internals/shell/test.sh'
+        sh './internals/shell/test.sh'
       }
     }
   }

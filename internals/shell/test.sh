@@ -2,7 +2,5 @@
 
 # Run tests...
 set -x
-ls
-docker ps -a
-docker image ls
-# npm test
+cd /usr/src/app
+npm test
