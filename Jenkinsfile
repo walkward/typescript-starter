@@ -12,6 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
+        sh 'echo "$(whoami)"'
         sh './internals/shell/test.sh'
       }
     }
