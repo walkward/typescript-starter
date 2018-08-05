@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'chown -R $(npm root -g) $(npm root) ~/.npm'
+        sh 'cut -d: -f1 /etc/passwd'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
