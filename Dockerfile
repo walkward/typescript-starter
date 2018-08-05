@@ -5,7 +5,9 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package*.json ./
-RUN npm install --only=production
+
+# Using unsafe-perm & allow-root to properly set permissions on .cache
+RUN sudo npm install --unsafe-perm=true --allow-root --only=production
 
 # Bundle app source
 COPY src ./src
@@ -14,9 +16,6 @@ COPY tsconfig.json ./tsconfig.json
 
 # Compile typescript
 RUN npm run build:tsc
-
-# Setting permissions for node_modules & modules .cache
-RUN find /usr/src/app -type d -exec chmod 755 {} \;
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
