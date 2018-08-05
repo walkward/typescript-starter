@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "target": "es5",
     "module": "commonjs",
     "outDir": "dist",
@@ -14,7 +13,6 @@
   },
   "include": [
     "src/**/*",
-    "internals/**/*"
   ],
   "exclude": [
     "node_modules"

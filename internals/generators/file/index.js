@@ -9,11 +9,15 @@ module.exports = {
   prompts: [{
     type: 'input',
     name: 'name',
-    message: 'enter the file name',
+    message: 'Enter the file name',
+    validate: filename => {
+      if (/^([^\s.\x00-\x1F!"$'\(\)*,\/:;<>\?\[\\\]\{\|\}\x7F]+)$/.test(filename)) return true;
+      return 'Invalid filename';
+    },
   }, {
     type: 'input',
     name: 'summary',
-    message: 'enter summary of file contents',
+    message: 'Enter summary of file contents',
   }, {
     type: 'list',
     name: 'type',
@@ -23,6 +27,15 @@ module.exports = {
       'controller',
       'model',
     ],
+  }, {
+    type: 'confirm',
+    name: 'restMethods',
+    message: 'Does this controller contain REST methods?',
+    default: false,
+    when: answers => {
+      if (answers.type === 'controller') return true;
+      return false;
+    },
   }],
   actions: data => {
     let templateFile, filePath;
