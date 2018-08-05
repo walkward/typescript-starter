@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Using unsafe-perm & allow-root to properly set permissions on .cache
-RUN sudo npm install --unsafe-perm=true --allow-root --only=production
+RUN npm install --unsafe-perm=true --allow-root --only=production
 
 # Bundle app source
 COPY src ./src
