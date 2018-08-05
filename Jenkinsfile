@@ -12,7 +12,8 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'ls ./node_modules/ada-ts'
+        sh 'ls'
+        sh 'ls ./node_modules'
         sh './internals/shell/test.sh'
       }
     }
