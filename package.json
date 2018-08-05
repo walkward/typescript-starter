@@ -22,8 +22,8 @@
     "build:tsc": "./node_modules/.bin/tsc",
     "build:docker": "docker build -t ${npm_package_config_user}/${npm_package_name} .",
     "docker:logs": "docker logs ${npm_package_name} -f --tail=\"20\"",
-    "test": "NODE_ENV=test ava-ts",
-    "test:watch": "NODE_ENV=test ava-ts --watch",
+    "test": "NODE_ENV=test ./node_modules/.bin/ava-ts",
+    "test:watch": "NODE_ENV=test ./node_modules/.bin/ava-ts --watch",
     "lint:tslint": "tslint -p .",
     "cleanup": "sh ./internals/shell/cleanup.sh",
     "generate": "plop --plopfile internals/generators/index.js"
