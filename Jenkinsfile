@@ -12,8 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'node --version'
-        // sh './internals/shell/test.sh'
+        sh './internals/shell/test.sh'
       }
     }
   }
