@@ -1,8 +1,9 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
   agent {
-    dockerfile true
-    customWorkspace '/usr/src/app'
+    dockerfile {
+      customWorkspace '/usr/src/app'
+    }
   }
   environment {
     CI = 'true'
