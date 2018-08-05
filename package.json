@@ -3,42 +3,58 @@
   "version": "1.0.0",
   "description": "Typescript starter app",
   "main": "dist/index.js",
+  "config": {
+    "user": "walkward"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/walkward/typescript-starter.git"
   },
   "engines": {
-    "npm": ">=5",
-    "node": ">=8"
+    "npm": "6.1.0",
+    "node": "8.10.0"
   },
   "scripts": {
     "start": "NODE_ENV=production node dist/index.js",
     "start:dev": "NODE_ENV=development nodemon",
-    "compile": "tsc && node dist/index.js",
-    "build": "tsc",
-    "docker:build": "docker build -t walkward/$npm_package_name .",
-    "docker:run": "docker run –name $npm_package_name -p 49160:8080 -d walkward/$npm_package_name",
-    "docker:logs": "docker logs $npm_package_name -f --tail=\"20\"",
+    "start:docker": "sh ./internals/shell/start.sh",
+    "build": "sh ./internals/shell/build.sh",
+    "build:tsc": "tsc",
+    "build:docker": "docker build --no-cache -t ${npm_package_config_user}/${npm_package_name} .",
+    "docker:logs": "docker logs ${npm_package_name} -f --tail=\"20\"",
     "test": "NODE_ENV=test ava-ts",
     "test:watch": "NODE_ENV=test ava-ts --watch",
     "lint:tslint": "tslint -p .",
+    "cleanup": "sh ./internals/shell/cleanup.sh",
     "generate": "plop --plopfile internals/generators/index.js"
   },
   "author": "Walker Ward",
   "license": "MIT",
   "devDependencies": {
     "ava-ts": "0.25.0",
+    "ava": "1.0.0-beta.6",
     "nodemon": "1.18.3",
     "plop": "2.0.0",
     "tslint": "5.11.0",
     "tslint-consistent-codestyle": "1.13.3",
     "tslint-eslint-rules": "5.3.1",
-    "tslint-microsoft-contrib": "5.1.0",
     "typescript": "2.9.1"
   },
   "dependencies": {
-    "ava": "1.0.0-beta.6",
-    "ts-node": "7.0.0"
+    "@types/body-parser": "1.17.0",
+    "@types/compression": "0.0.36",
+    "@types/dotenv": "4.0.3",
+    "@types/express": "4.16.0",
+    "@types/helmet": "0.0.38",
+    "@types/node": "10.5.6",
+    "@types/winston": "2.3.9",
+    "body-parser": "1.18.3",
+    "compression": "1.7.3",
+    "dotenv": "6.0.0",
+    "express": "4.16.3",
+    "helmet": "3.13.0",
+    "ts-node": "7.0.0",
+    "winston": "3.0.0"
   },
   "ava": {
     "compileEnhancements": false,
@@ -55,15 +71,5 @@
     "require": [
       "ts-node/register"
     ]
-  },
-  "nodemon": {
-    "watch": [
-      "src"
-    ],
-    "ext": "ts",
-    "ignore": [
-      "src/**/*.spec.ts"
-    ],
-    "exec": "ts-node ./src/index.ts"
   }
 }
