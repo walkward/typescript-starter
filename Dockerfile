@@ -5,9 +5,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 COPY package*.json ./
-
-# Using unsafe-perm & allow-root to properly set permissions on .cache
-RUN npm install --unsafe-perm=true --allow-root --only=production
+RUN npm install --only=production
 
 # Bundle app source
 COPY src ./src
@@ -16,6 +14,9 @@ COPY tsconfig.json ./tsconfig.json
 
 # Compile typescript
 RUN npm run build:tsc
+
+# Setting permissions for node_modules & modules .cache
+RUN chown -R jenkins:jenkins node_modules
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
