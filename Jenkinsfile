@@ -13,9 +13,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'echo $PWD'
-        sh 'ls /usr/src/app'
-        sh 'ls ~/'
+        sh 'cd /usr/src/app'
         sh 'ls'
         // sh './internals/shell/test.sh'
       }
