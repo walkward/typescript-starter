@@ -15,5 +15,8 @@ COPY tsconfig.json ./tsconfig.json
 # Compile typescript
 RUN npm run build:tsc
 
+# Setting permissions for node_modules cache
+RUN chmod +x node_modules/.cache
+
 EXPOSE 3000
 CMD [ "npm", "start" ]
