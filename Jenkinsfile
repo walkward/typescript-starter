@@ -14,6 +14,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
+        echo "${WORKSPACE}"
         sh 'npm test --prefix ${DIR}'
       }
     }
