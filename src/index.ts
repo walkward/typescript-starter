@@ -10,3 +10,5 @@ dotenv.config();
 
 // Start app server
 app.start();
+
+console.log('asdf');
