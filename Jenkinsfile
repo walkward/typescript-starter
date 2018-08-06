@@ -3,7 +3,6 @@ pipeline {
   agent { dockerfile true }
   environment {
     CI = 'true'
-    USER = "${env.USER}"
   }
   stages {
     // stage('Build') {
@@ -13,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'echo ${env.USER}'
+        sh 'echo ${env.JENKINS_USER}'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
