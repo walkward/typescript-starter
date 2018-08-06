@@ -12,8 +12,6 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'suid jenkins'
-        su 'whoami'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
