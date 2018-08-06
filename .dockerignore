@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+tslint.json
+README.md
+LICENSE
+Jenkinsfile
+Dockerfile
+.editorconfig

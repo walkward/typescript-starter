@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'chown -R root /usr/src/app'
+        sh 'whoami'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
