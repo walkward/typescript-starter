@@ -22,7 +22,7 @@
     "build:tsc": "tsc",
     "build:docker": "docker build -t ${npm_package_config_user}/${npm_package_name} .",
     "docker:logs": "docker logs ${npm_package_name} -f --tail=\"20\"",
-    "test": "ava-ts --tap | tap-xunit > ./junit.xml",
+    "test": "sh ./internals/shell/test.sh",
     "test:watch": "NODE_ENV=test ava-ts --watch",
     "lint:tslint": "tslint -p .",
     "cleanup": "sh ./internals/shell/cleanup.sh",

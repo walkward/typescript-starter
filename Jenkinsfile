@@ -7,19 +7,19 @@ pipeline {
   }
   environment {
     CI = 'true'
+    DIR = '/usr/src/app'
   }
   stages {
     stage('Test') {
       steps {
-        sh '/usr/src/app/internals/shell/test.sh'
-        sh 'cat /usr/src/app/junit.xml'
+        sh 'echo ${env.PWD}'
+        sh '${DIR}/internals/shell/test.sh'
       }
     }
   }
   post {
     always {
-      sh 'ls /usr/src/app'
-      junit '/usr/src/app/*.xml'
+      junit '**/reports/*.xml'
     }
   }
 }

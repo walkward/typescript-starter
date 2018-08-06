@@ -2,4 +2,6 @@
 
 # Run tests...
 set -x
-npm test --prefix /usr/src/app
+
+mkdir -p ${PWD}/reports
+ava-ts --tap | tap-xunit > ${PWD}/reports/junit.xml
