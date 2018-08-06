@@ -2,6 +2,6 @@
 
 # Run tests...
 set -x
-echo $BUILD_USER
+su jenkins -c 'echo "hello from $USER"'
 cd /usr/src/app
 npm test
