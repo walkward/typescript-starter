@@ -20,8 +20,7 @@ pipeline {
   }
   post {
     always {
-      sh 'ls ${WORKSPACE}'
-      junit '**/junit.xml' // Use tap reporter results
+      junit '${WORKSPACE}/junit.xml' // Use tap reporter results
       cleanWs() // Remove all files from workspace
     }
   }
