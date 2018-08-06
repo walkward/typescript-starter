@@ -19,7 +19,7 @@ pipeline {
   }
   post {
     always {
-      sh 'ls $DIR'
+      sh 'find $DIR'
       junit '**/reports/junit.xml'
     }
   }
