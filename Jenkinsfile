@@ -5,7 +5,6 @@ pipeline {
       args '--user jenkins'
     }
   }
-  // agent { any true }
   environment {
     CI = 'true'
     DIR = '/usr/src/app'
@@ -13,7 +12,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'npm test --prefix ${DIR}'
+        sh 'npm test --prefix ${DIR}' // Running tests
         sh 'cp ${DIR}/reports/junit.xml ${WORKSPACE}' // Copying to workspace for discoverability
       }
     }
