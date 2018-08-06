@@ -2,5 +2,4 @@
 
 # Run tests...
 set -x
-cd /usr/src/app
-npm test
+npm test --prefix /usr/src/app
