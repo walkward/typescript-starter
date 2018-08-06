@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'echo ${env.JENKINS_USER}'
+        sh 'echo "${env.JENKINS_USER}"'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
