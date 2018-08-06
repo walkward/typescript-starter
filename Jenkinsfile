@@ -13,7 +13,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'echo $USER'
+        sh 'echo ${env.USER}'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
