@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'whoami'
+        sh 'echo $USER'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
