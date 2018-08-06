@@ -18,7 +18,7 @@ pipeline {
   }
   post {
     always {
-      junit '/usr/src/app/junit.xml'
+      junit '/usr/src/app/**/*.xml'
     }
   }
 }
