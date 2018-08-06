@@ -3,6 +3,7 @@ pipeline {
   agent {
     dockerfile {
       args '--user jenkins'
+      customWorkspace '/usr/src/app'
     }
   }
   // agent { any true }
