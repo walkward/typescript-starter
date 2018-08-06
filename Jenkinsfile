@@ -5,7 +5,7 @@ pipeline {
   //     args  '--user jenkins'
   //   }
   // }
-  agent { any }
+  agent { any true }
   environment {
     CI = 'true'
     DIR = '/usr/src/app'
