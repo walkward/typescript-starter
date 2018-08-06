@@ -7,3 +7,5 @@ Jenkinsfile
 Dockerfile
 .editorconfig
 reports
+.nyc_output
+coverage

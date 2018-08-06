@@ -23,7 +23,6 @@
     "docker:start": "sh ./internals/shell/docker/start.sh",
     "docker:stop": "sh ./internals/shell/docker/stop.sh",
     "test": "DIR=${PWD} sh ./internals/shell/test.sh",
-    "test:watch": "NODE_ENV=test ava-ts --watch",
     "lint": "DIR=${PWD} sh ./internals/shell/lint.sh",
     "cleanup:prebuild": "sh ./internals/shell/cleanup/prebuild.sh",
     "cleanup:reports": "sh ./internals/shell/cleanup/reports.sh",
@@ -33,6 +32,7 @@
   "license": "MIT",
   "devDependencies": {
     "nodemon": "1.18.3",
+    "nyc": "12.0.2",
     "plop": "2.0.0",
     "tslint": "5.11.0",
     "tslint-consistent-codestyle": "1.13.3",

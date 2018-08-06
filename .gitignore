@@ -2,3 +2,7 @@ node_modules
 dist
 .DS_Store
 reports
+
+# Coverage files
+.nyc_output
+coverage
