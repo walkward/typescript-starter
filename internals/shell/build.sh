@@ -10,4 +10,4 @@ npm install
 npm run build:tsc
 
 # Build docker image
-npm run build:docker
+npm run docker:build
