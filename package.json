@@ -23,6 +23,7 @@
     "docker:start": "sh ./internals/shell/docker/start.sh",
     "docker:stop": "sh ./internals/shell/docker/stop.sh",
     "test": "DIR=${PWD} sh ./internals/shell/test.sh",
+    "coverage": "nyc ava-ts",
     "lint": "DIR=${PWD} sh ./internals/shell/lint.sh",
     "cleanup:prebuild": "sh ./internals/shell/cleanup/prebuild.sh",
     "cleanup:reports": "sh ./internals/shell/cleanup/reports.sh",
