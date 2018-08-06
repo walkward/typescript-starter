@@ -1,2 +1,12 @@
-### Helpful links:
-- [JSDoc support in JavaScript](https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript)
+### Prerequisites
+- Node
+- NPM
+- Jenkins
+
+### Getting Started
+```shell
+npm run build
+```
+
+### Jenkins Setup
+- [Installation guide](https://jenkins.io/doc/book/installing/)
