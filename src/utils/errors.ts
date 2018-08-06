@@ -5,6 +5,8 @@
 import AppError from '../models/AppError';
 import logging from './logging';
 
-export const handleError = async (err: AppError) => {
+// const trusted = (err: AppError): boolean => err.isOperational;
+
+export const handleError = (err: AppError): object => {
   return logging.error(err);
 };
