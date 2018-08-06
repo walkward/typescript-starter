@@ -12,7 +12,7 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'su jenkins'
+        sh 'suid jenkins'
         su 'whoami'
         sh '/usr/src/app/internals/shell/test.sh'
       }
