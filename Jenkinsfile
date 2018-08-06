@@ -18,7 +18,8 @@ pipeline {
   }
   post {
     always {
-      junit '/usr/src/app/**/*.xml'
+      sh 'ls /usr/src/app'
+      junit '/usr/src/app/*.xml'
     }
   }
 }
