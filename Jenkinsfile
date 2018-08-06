@@ -20,11 +20,8 @@ pipeline {
   post {
     always {
       sh 'ls $DIR'
-      // junit '**/reports/junit.xml'
+      junit '**/reports/junit.xml'
       cleanWs()
-      dir('$DIR') {
-        deleteDir()
-      }
     }
   }
 }
