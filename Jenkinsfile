@@ -3,7 +3,6 @@ pipeline {
   agent {
     dockerfile {
       args '--user jenkins'
-      customWorkspace '/usr/src/app'
     }
   }
   // agent { any true }
@@ -14,15 +13,15 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        echo "$WORKSPACE"
-        // sh 'npm test --prefix ${DIR}'
+        sh 'npm test --prefix ${DIR}'
       }
     }
   }
-  // post {
-  //   always {
-  //     sh 'ls $DIR'
-  //     junit '**/reports/junit.xml'
-  //   }
-  // }
+  post {
+    always {
+      sh 'ls $DIR'
+      junit '**/reports/junit.xml'
+      cleanWs()
+    }
+  }
 }
