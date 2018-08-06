@@ -12,7 +12,8 @@ pipeline {
     // }
     stage('Test') {
       steps {
-        sh 'echo "${env.JENKINS_USER}"'
+        sh 'su jenkins'
+        su 'whoami'
         sh '/usr/src/app/internals/shell/test.sh'
       }
     }
