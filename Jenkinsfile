@@ -1,6 +1,10 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-  agent { dockerfile true }
+  agent {
+    dockerfile {
+      args  '--user jenkins'
+    }
+  }
   environment {
     CI = 'true'
   }
