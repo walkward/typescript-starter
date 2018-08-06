@@ -13,7 +13,6 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        echo "${WORKSPACE}"
         sh 'npm test --prefix ${DIR}'
         sh 'cp ${DIR}/reports/junit.xml $WORKSPACE'
       }
