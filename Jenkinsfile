@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Lint') {
       steps {
-        sh 'npm run lint:tslint --prefix ${DIR}'
+        sh 'npm run lint --prefix ${DIR}'
       }
     }
     stage('Test') {

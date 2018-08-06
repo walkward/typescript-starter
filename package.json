@@ -24,7 +24,7 @@
     "docker:stop": "sh ./internals/shell/docker/stop.sh",
     "test": "DIR=${PWD} sh ./internals/shell/test.sh",
     "test:watch": "NODE_ENV=test ava-ts --watch",
-    "lint:tslint": "tslint -p . --format junit --out ./reports/tslint-junit.xml",
+    "lint": "DIR=${PWD} sh ./internals/shell/lint.sh",
     "cleanup": "sh ./internals/shell/cleanup.sh",
     "generate": "plop --plopfile internals/generators/index.js"
   },
