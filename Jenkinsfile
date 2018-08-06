@@ -2,7 +2,8 @@
 pipeline {
   agent {
     dockerfile {
-      args  '--user jenkins'
+      args '--user jenkins'
+      additionalBuildArgs '--no-cache'
     }
   }
   // agent { any true }
@@ -19,7 +20,7 @@ pipeline {
   }
   post {
     always {
-      sh 'find $DIR'
+      sh 'ls $DIR'
       junit '**/reports/junit.xml'
     }
   }
