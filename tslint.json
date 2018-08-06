@@ -5,6 +5,8 @@
     "tslint-eslint-rules"
   ],
   "jsRules": {
+    "curly": false,
+    "object-literal-sort-keys": false,
     "file-header": [true, "\\w", "File summary..."],
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
     "align": [true, "parameters", "statements"],
@@ -73,6 +75,7 @@
     ]
   },
   "rules": {
+    "curly": false,
     "object-literal-sort-keys": false,
     "quotemark": [true, "single"],
     "no-import-side-effect": false,
