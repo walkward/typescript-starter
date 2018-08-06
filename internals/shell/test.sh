@@ -1,7 +1,8 @@
 #!/bin/sh
 
+npm run cleanup:reports
+
 # Run tests...
 set -x
-rm -rf ${DIR}/reports
 mkdir -p ${DIR}/reports
 ava-ts --tap | tap-xunit > ${DIR}/reports/ava-junit.xml

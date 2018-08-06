@@ -5,6 +5,3 @@ rm -rf ./dist
 
 # Remove current node_modules
 rm -rf ./node_modules
-
-# Remove all reports
-rm -rf ./reports

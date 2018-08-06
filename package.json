@@ -25,7 +25,8 @@
     "test": "DIR=${PWD} sh ./internals/shell/test.sh",
     "test:watch": "NODE_ENV=test ava-ts --watch",
     "lint": "DIR=${PWD} sh ./internals/shell/lint.sh",
-    "cleanup": "sh ./internals/shell/cleanup.sh",
+    "cleanup:prebuild": "sh ./internals/shell/cleanup/prebuild.sh",
+    "cleanup:reports": "sh ./internals/shell/cleanup/reports.sh",
     "generate": "plop --plopfile internals/generators/index.js"
   },
   "author": "Walker Ward",

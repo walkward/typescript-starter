@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # Start with clean slate!
-npm run cleanup
+npm run cleanup:prebuild
+npm run cleanup:reports
 
 # Install packages
 npm install
