@@ -21,6 +21,11 @@ pipeline {
         sh 'cp ${DIR}/reports/*-junit.xml ${WORKSPACE}' // Copying to workspace for discoverability
       }
     }
+    stage('Deploy') {
+      steps {
+        sh "echo 'shell scripts to deploy to server...'"
+      }
+    }
   }
   post {
     always {
