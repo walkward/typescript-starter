@@ -12,7 +12,7 @@ pipeline {
     stage('Test') {
       steps {
         sh '/usr/src/app/internals/shell/test.sh'
-        sh 'ls /usr/src/app'
+        sh 'cat /usr/src/junit.xml'
       }
     }
   }

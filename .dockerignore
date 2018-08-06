@@ -6,3 +6,4 @@ LICENSE
 Jenkinsfile
 Dockerfile
 .editorconfig
+junit.xml
