@@ -80,7 +80,6 @@
     "quotemark": [true, "single"],
     "no-import-side-effect": false,
     "no-default-export": false,
-    "interface-name": [true, "never-prefix"],
     "ter-indent": [true, 2],
     "no-console": { "severity": "warning" }
   },
