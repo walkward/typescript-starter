@@ -8,6 +8,6 @@ import test from 'ava';
 const fn = async () => Promise.resolve('foo');
 
 // tslint:disable-next-line:typedef
-test(async (t) => {
+test('Example Test', async (t) => {
   t.is(await fn(), 'foo');
 });
