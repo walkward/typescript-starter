@@ -3,6 +3,7 @@ pipeline {
   agent { dockerfile true }
   environment {
     CI = 'true'
+    USER = "${env.USER}"
   }
   stages {
     // stage('Build') {
