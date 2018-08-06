@@ -20,9 +20,10 @@ pipeline {
   }
   post {
     always {
-      sh 'ls $DIR'
-      junit '**/reports/junit.xml'
-      cleanWs()
+      sh 'ls ${WORKSPACE}'
+      sh 'ls ${WORKSPACE}/reports'
+      junit '**/reports/junit.xml' // Use tap reporter results
+      cleanWs() // Remove all files from workspace
     }
   }
 }
