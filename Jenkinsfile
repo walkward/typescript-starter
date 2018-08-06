@@ -1,10 +1,11 @@
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-  agent {
-    dockerfile {
-      args  '--user jenkins'
-    }
-  }
+  // agent {
+  //   dockerfile {
+  //     args  '--user jenkins'
+  //   }
+  // }
+  agent { any }
   environment {
     CI = 'true'
     DIR = '/usr/src/app'
@@ -12,8 +13,9 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'npm test --prefix ${DIR}'
-        junit '${DIR}/reports/*.xml'
+        echo "${WORKSPACE}"
+        // sh 'npm test --prefix ${DIR}'
+        // junit '${DIR}/reports/*.xml'
       }
     }
   }
