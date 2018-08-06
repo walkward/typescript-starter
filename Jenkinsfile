@@ -13,12 +13,8 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm test --prefix ${DIR}'
+        junit '${DIR}/reports/*.xml'
       }
-    }
-  }
-  post {
-    always {
-      junit '${DIR}/reports/*.xml'
     }
   }
 }
