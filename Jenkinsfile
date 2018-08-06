@@ -14,6 +14,7 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm test --prefix ${DIR}'
+        sh 'cp ${DIR}/reports/junit.xml ${WORKSPACE}'
       }
     }
   }
