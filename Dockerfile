@@ -13,7 +13,7 @@ USER jenkins
 COPY --chown=jenkins:jenkins . .
 
 # Install app dependencies
-RUN npm install --only=production
+RUN npm install
 
 # Compile typescript
 RUN npm run build:tsc
