@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'echo "${env.PWD}"'
+        echo '${env.PWD}'
         sh '${DIR}/internals/shell/test.sh'
       }
     }
