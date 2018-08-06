@@ -15,7 +15,7 @@ pipeline {
       steps {
         echo "${WORKSPACE}"
         sh 'npm test --prefix ${DIR}'
-        sh 'cp ${DIR}/reports/*.xml $WORKSPACE'
+        sh 'cp ${DIR}/reports/junit.xml $WORKSPACE'
       }
     }
   }
