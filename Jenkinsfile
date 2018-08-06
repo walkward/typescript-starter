@@ -12,7 +12,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh '${DIR}/internals/shell/test.sh'
+        sh 'npm test --prefix ${DIR}'
       }
     }
   }
