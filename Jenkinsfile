@@ -22,6 +22,9 @@ pipeline {
       sh 'ls $DIR'
       junit '**/reports/junit.xml'
       cleanWs()
+      dir('$DIR') {
+        deleteDir()
+      }
     }
   }
 }
