@@ -14,15 +14,14 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm test --prefix ${DIR}'
-        sh 'cp ${DIR}/reports/junit.xml ${WORKSPACE}/reports' // Copying to workspace for discoverability
+        sh 'cp ${DIR}/reports/junit.xml ${WORKSPACE}' // Copying to workspace for discoverability
       }
     }
   }
   post {
     always {
       sh 'ls ${WORKSPACE}'
-      sh 'ls ${WORKSPACE}/reports'
-      junit '**/reports/junit.xml' // Use tap reporter results
+      junit '**/junit.xml' // Use tap reporter results
       cleanWs() // Remove all files from workspace
     }
   }
