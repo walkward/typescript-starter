@@ -21,6 +21,7 @@
     "build": "sh ./internals/shell/build.sh",
     "build:tsc": "tsc",
     "build:docker": "docker build -t ${npm_package_config_user}/${npm_package_name} .",
+    "docker:stop": "sh ./internals/shell/docker/stop.sh",
     "docker:logs": "docker logs ${npm_package_name} -f --tail=\"20\"",
     "test": "DIR=${PWD} sh ./internals/shell/test.sh",
     "test:watch": "NODE_ENV=test ava-ts --watch",

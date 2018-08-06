@@ -3,7 +3,6 @@ pipeline {
   agent {
     dockerfile {
       args '--user jenkins'
-      additionalBuildArgs '--no-cache'
     }
   }
   // agent { any true }
